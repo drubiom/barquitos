@@ -23,7 +23,7 @@ void imprimircompu();//IMPRIME EL TABLERO CON LOS BARCOS OCULTOS DE COMPU
 void inicializartableros();//INICIALIZA LOS TABLEROS CON ASTERISCOS EN TODAS LAS POSICIONES
 int sorteaturno();//TNUMERO ALEATORIO PARA SORTEAR TURNO
 int comprobar(int num1, int num2, int tablero);
-int comprobarBARCOS(int num1, int num2, int tablero);
-int comprobarsihundido(int num1,int num2,int tablero);
-//COMPRUEBA SI LOS DISPARON DAN A UN BARCO, SI EL BARCO ESTÁ HUNDIDO
+int comprobarBARCOS(int num1, int num2, int tablero);//COMPRUEBA SI LOS DISPARON DAN A UN BARCO
+int comprobarsihundido(int num1,int num2,int tablero);//COMPRUEBA SI EL BARCO ESTÁ HUNDIDO
+
 #endif
