@@ -16,7 +16,7 @@ void colocauser(){
             scanf("%i",&num2);}
         aux=comprobar(num1-1,num2-1,2);
         while (aux==1){
-            printf("Error! En esta posición no se puede colocar el barco porque está junto a otro. Prueba de nuevo, así está tu tablero: \n");
+            printf("Error! En esta posiciÃ³n no se puede colocar el barco porque estÃ¡ junto a otro. Prueba de nuevo, asÃ­ estÃ¡ tu tablero: \n");
             imprimiruser();
             printf("Introduce Fila(1-7): \n");
              scanf("%i",&num1);
@@ -48,7 +48,7 @@ void colocauser(){
             scanf("%i",&num2);}
         aux=comprobar(num1-1,num2-1,2);
         while (aux==1){
-            printf("Error! En esta posición no se puede colocar el barco porque está junto a otro. Prueba de nuevo, así está tu tablero: \n");
+            printf("Error! En esta posiciÃ³n no se puede colocar el barco porque estÃ¡ junto a otro. Prueba de nuevo, asÃ­ estÃ¡ tu tablero: \n");
             imprimiruser();
             printf("Introduce Fila(1-7): \n");
             scanf("%i",&num1);
@@ -76,7 +76,7 @@ void colocauser(){
                     int numaux1=num1-1;
                     aux=comprobar(numaux1-1,num2-1,2);
                     if(aux==1){
-                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, así está tu tablero:");
+                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, asÃ­ estÃ¡ tu tablero:");
                         imprimiruser();
                     }
                     else {
@@ -98,7 +98,7 @@ void colocauser(){
                         int numaux2=num2+1;
                         aux=comprobar(num1-1,numaux2-1,2);
                         if(aux==1){
-                            printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, así está tu tablero:");
+                            printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, asÃ­ estÃ¡ tu tablero:");
                             imprimiruser();
                         }
                         else {
@@ -119,7 +119,7 @@ void colocauser(){
                     int numaux1=num1+1;
                     aux=comprobar(numaux1-1,num2-1,2);
                     if(aux==1){
-                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, así está tu tablero:");
+                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, asÃ­ estÃ¡ tu tablero:");
                         imprimiruser();
                     }
                     else {
@@ -139,7 +139,7 @@ void colocauser(){
                     int numaux2=num2-1;
                     aux=comprobar(num1-1,numaux2-1,2);
                     if(aux==1){
-                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, así está tu tablero:");
+                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, asÃ­ estÃ¡ tu tablero:");
                         imprimiruser();
                     }
                     else {
@@ -160,7 +160,7 @@ void colocauser(){
 
         }
          printf("Todos los barcos han sido colocados correctamente \n");
-         printf("Así ha quedado tu tablero final: \n");
+         printf("AsÃ­ ha quedado tu tablero final: \n");
          imprimiruser();
 
 
@@ -442,7 +442,7 @@ void juegauser(){
     printf("Introduce Fila(1-7) o '100' para guardar la partida: \n");
     scanf("%i",&num1);
     if(num1==100){
-        //GUARDAPARTIDA
+        //GUARDAPARTIDA POR DESARROLLAR
     }
     else{
         while(num1>7 || num1<1){
@@ -456,7 +456,7 @@ void juegauser(){
         scanf("%i",&num2);}
     barco=comprobarBARCOS(num1-1,num2-1,1);
     if(barco==1){
-        printf("YA HAS DISPARADO A ESTA DIRECCION ANTERIORMENTE. INTÉNTALO DE NUEVO \n");
+        printf("YA HAS DISPARADO A ESTA DIRECCION ANTERIORMENTE. INTÃ‰NTALO DE NUEVO \n");
     }
     else if(barco==2){
             printf("HUNDIDO\n");
@@ -554,11 +554,11 @@ void inicializartableros(){
 }
 int sorteaturno(){
     int aleatorio;
-    //Sleep(1000);
+    Sleep(1000);
     printf("SORTEANDO TURNO...\n");
     srand (time(NULL));
     aleatorio=rand()%2;
-    //Sleep(1000);
+    Sleep(1000);
     return aleatorio;
 }
 
