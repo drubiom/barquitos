@@ -737,7 +737,7 @@ int main()
     hundidosuser=0;
     printf("Hola, bienvenido al juego de hundir la flota. \n");
     sleep(1);
-    printf("¿Que quieres hacer? \n");
+    printf("¿Qué quieres hacer? \n");
     do{
         printf("1.Iniciar nueva partida. \n");
         printf("2.Recuperar partida guardada. \n");
@@ -766,7 +766,7 @@ int main()
                 turno=1;
             }
             else{
-                printf("Vaya, la suerte dice que me toca empezar a mi. Preparate!!\n");
+                printf("Vaya, la suerte dice que me toca empezar a mi. Prepárate!!\n");
                 //Sleep(1000);
 		sleep(1);
                 printf("3\n");
@@ -816,11 +816,11 @@ int main()
         }
    }
   if(hundidosuser==3){
-    printf("ENHORABUENA!! ME HAS GANADO :( PREPÁRATE PARA LA PROXIMA \n" );
+    printf("ENHORABUENA!! ME HAS GANADO :( PREPÁRATE PARA LA PRÓXIMA \n" );
          //¿EMPEZAR OTRA? POR DESARROLLAR
    }
   else if (hundidoscompu==3){
-    printf("JAJAJA TE HE GANADO, SUERTE LA PROXIMA VEZ ;) \n");
+    printf("JAJAJA TE HE GANADO, SUERTE LA PRÓXIMA VEZ ;) \n");
          //¿EMPEZAR OTRA? POR DESARROLLAR
    }
           return 0;
