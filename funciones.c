@@ -1,5 +1,13 @@
 #include "cabecera.h"
-void colocauser(){
+/*
+##Proyecto miniflota##
+Realizado por David Rubio Mateos (bk0084)
+main.c con el programa principal
+funciones.c con el desarrollo de todas las funciones utilizadas
+cabecera.h con la declaraci�n de variables globales y cabeceras de funciones
+*/
+
+void colocauser(){//PERMITE AL USUARIO COLOCAR SUS BARCOS EN EL TABLERO
     int aux=0,i;
     for(i=0;i<2;i++){
         printf("Barco de 1 Unidad (%i)\n",i+1);
@@ -16,7 +24,7 @@ void colocauser(){
             scanf("%i",&num2);}
         aux=comprobar(num1-1,num2-1,2);
         while (aux==1){
-            printf("Error! En esta posición no se puede colocar el barco porque está junto a otro. Prueba de nuevo, así está tu tablero: \n");
+            printf("Error! En esta posici\242n no se puede colocar el barco porque est\240 junto a otro. Prueba de nuevo, as\241 est\240 tu tablero: \n");
             imprimiruser();
             printf("Introduce Fila(1-7): \n");
              scanf("%i",&num1);
@@ -48,7 +56,7 @@ void colocauser(){
             scanf("%i",&num2);}
         aux=comprobar(num1-1,num2-1,2);
         while (aux==1){
-            printf("Error! En esta posición no se puede colocar el barco porque está junto a otro. Prueba de nuevo, así está tu tablero: \n");
+            printf("Error! En esta posici\242n no se puede colocar el barco porque est\240 junto a otro. Prueba de nuevo, as\241 est\240 tu tablero: \n");
             imprimiruser();
             printf("Introduce Fila(1-7): \n");
             scanf("%i",&num1);
@@ -62,21 +70,21 @@ void colocauser(){
                 scanf("%i",&num2);}
             aux=comprobar(num1-1,num2-1,2);
         }
-    printf("Donde quieres introducir la segunda unidad del barco? \n");
+    printf("%cDonde quieres introducir la segunda unidad del barco? \n",168);
      int aux3=0,aux2;
     while(aux3==0){
     printf("1. Arriba\n");
 	printf("2. Derecha\n");
 	printf("3. Abajo\n");
 	printf("4. Izquierda\n");
-	printf("Elija una orientacion(1-4): ");
+	printf("Elija una orientaci\242n(1-4): ");
         scanf("%i",&aux2);
             if(aux2==1){
-                 if(num1!=0){
+                 if(num1!=1){
                     int numaux1=num1-1;
                     aux=comprobar(numaux1-1,num2-1,2);
                     if(aux==1){
-                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, así está tu tablero:");
+                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, int\202ntalo de nuevo, as\241 est\240 tu tablero:");
                         imprimiruser();
                     }
                     else {
@@ -87,18 +95,18 @@ void colocauser(){
                     }
                 }
                 else{
-                printf("Error no puede ser introducido en este espacio, por favor, intentalo de nuevo, este es tu tablero:");
+                printf("Error no puede ser introducido en este espacio, por favor, int\202ntalo de nuevo, \202ste es tu tablero:");
                 imprimiruser();}
             }
 
 
 
           else if(aux2==2){
-                     if(num2!=6){
+                     if(num2!=7){
                         int numaux2=num2+1;
                         aux=comprobar(num1-1,numaux2-1,2);
                         if(aux==1){
-                            printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, así está tu tablero:");
+                            printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, int\202ntalo de nuevo, as\241 est\240 tu tablero:");
                             imprimiruser();
                         }
                         else {
@@ -109,17 +117,17 @@ void colocauser(){
                         }
                     }
                     else{
-                    printf("Error no puede ser introducido en este espacio, por favor, intentalo de nuevo, este es tu tablero:");
+                    printf("Error no puede ser introducido en este espacio, por favor, int\202ntalo de nuevo, \202ste es tu tablero:");
                     imprimiruser();}
                 }
 
 
            else if(aux2==3){
-                 if(num1!=6){
+                 if(num1!=7){
                     int numaux1=num1+1;
                     aux=comprobar(numaux1-1,num2-1,2);
                     if(aux==1){
-                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, así está tu tablero:");
+                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, int\202ntalo de nuevo, as\241 est\240 tu tablero:");
                         imprimiruser();
                     }
                     else {
@@ -130,16 +138,16 @@ void colocauser(){
                     }
                 }
                 else{
-                printf("Error no puede ser introducido en este espacio, por favor, intentalo de nuevo, este es tu tablero:");
+                printf("Error no puede ser introducido en este espacio, por favor, int\202ntalo de nuevo, \202ste es tu tablero:");
                 imprimiruser();}
             }
 
            else if(aux2==4){
-                 if(num2!=0){
+                 if(num2!=1){
                     int numaux2=num2-1;
                     aux=comprobar(num1-1,numaux2-1,2);
                     if(aux==1){
-                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, intentalo de nuevo, así está tu tablero:");
+                        printf("Error no puede ser introducido en este espacio porque tiene otro barco al lado, por favor, int\202ntalo de nuevo, as\241 est\240 tu tablero:");
                         imprimiruser();
                     }
                     else {
@@ -150,17 +158,18 @@ void colocauser(){
                     }
                 }
                 else{
-                printf("Error no puede ser introducido en este espacio, por favor, intentalo de nuevo, este es tu tablero:");
+                printf("Error no puede ser introducido en este espacio, por favor, int\202ntalo de nuevo, \202ste es tu tablero:");
                 imprimiruser();}
             }
 
             else {
-            printf("Error, el numero debe estar entre 1 y 7. intentalo de nuevo");}
+            printf("Error, el numero debe estar entre 1 y 4. int\202ntalo de nuevo:");}
 
 
         }
+         system("cls");
          printf("Todos los barcos han sido colocados correctamente \n");
-         printf("Así ha quedado tu tablero final: \n");
+         printf("As\241 ha quedado tu tablero final: \n");
          imprimiruser();
 
 
@@ -168,20 +177,20 @@ void colocauser(){
 
 }
 
-void colocacompu(){
+void colocacompu(){//COLOCA LOS BARCOS ALEATORIAMENTE EN EL TABLERO
     int aux=0,i;
     srand (time(NULL));
     for(i=0;i<2;i++){
         num1=rand()%7;
-        //Sleep(500);
+        Sleep(500);
         num2=rand()%7;
-        //Sleep(1001);
+        Sleep(1001);
         aux=comprobar(num1,num2,1);
         while (aux==1){
             int num1=rand()%7;
-            //Sleep(1);
+            Sleep(1);
             int num2=rand()%7;
-            //Sleep(1);
+            Sleep(1);
             aux=comprobar(num1,num2,1);
         }
         tablerocompuoculto[num1][num2]='O';
@@ -191,15 +200,15 @@ void colocacompu(){
     }
 
         num1=rand()%7;
-        //Sleep(1000);
+        Sleep(1000);
         num2=rand()%7;
-        //Sleep(1000);
+        Sleep(1000);
         aux=comprobar(num1,num2,1);
     while (aux==1){
             num1=rand()%7;
-            //Sleep(1);
+            Sleep(1);
             num2=rand()%7;
-            //Sleep(1);
+            Sleep(1);
             aux=comprobar(num1,num2,1);
         }
 
@@ -265,7 +274,7 @@ void colocacompu(){
         tablerocompuoculto[num1][num2]='O';
 }
 
-int comprobar(int num1, int num2, int tablero){
+int comprobar(int num1, int num2, int tablero){//COMPRUEBA QUE AL COLOCAR LOS BARCOS, NO HAYA MAS BARCOS COLINDANTES A ESTE
 //9 casos diferentes
 if(num1==0){
     if(num2==0){//1 esquina arriba izquierda
@@ -405,7 +414,7 @@ else{//9 todas las demas (centro)
 return 0;
 }
 
-void juegacompu(){
+void juegacompu(){//TURNO DE JUEGO DEL ORDENADOR
     int barco, aux1=1;
     do{
     num1=rand()%7;
@@ -415,26 +424,34 @@ void juegacompu(){
 
     }
     else if(barco==2){
+
             printf("TE HE HUNDIDO UN BARCO\n");
+            Sleep(1000);
             tablerouser[num1][num2]='X';
             hundidoscompu=hundidoscompu+1;
+            marcardisparos(num1,num2,2);
             aux1=0;
         }
     else if(barco==3){
-            printf("HE TOCADO UN BARCO TUYO\n");
+
+            printf("HE TOCADO UN BARCO\n");
+            Sleep(1000);
             tablerouser[num1][num2]='X';
             aux1=0;
         }
     else if(barco==4){
             tablerouser[num1][num2]='*';
             tablerouser[num1][num2]='*';
-            printf("HE TOCADO AGUA!! \n");
+
+            printf("HE DISPARADO AGUA!! \n");
+            Sleep(1000);
             aux1=0;
         }
     }while(aux1==1);
 
 }
-void juegauser(){
+
+void juegauser(){//TURNO DE JUEGO DEL USUARIO
     int barco, aux1=1;
     printf("ES TU TURNO. \n");
     do{
@@ -442,7 +459,8 @@ void juegauser(){
     printf("Introduce Fila(1-7) o '100' para guardar la partida: \n");
     scanf("%i",&num1);
     if(num1==100){
-        //GUARDAPARTIDA POR DESARROLLAR
+        guardapartida();
+
     }
     else{
         while(num1>7 || num1<1){
@@ -456,17 +474,22 @@ void juegauser(){
         scanf("%i",&num2);}
     barco=comprobarBARCOS(num1-1,num2-1,1);
     if(barco==1){
-        printf("YA HAS DISPARADO A ESTA DIRECCION ANTERIORMENTE. INTÉNTALO DE NUEVO \n");
+        printf("YA HAS DISPARADO A ESTA DIRECCI%cN ANTERIORMENTE. INT\112NTALO DE NUEVO \n",32);
     }
     else if(barco==2){
-            printf("HUNDIDO\n");
+            system("cls");
+            printf("ME HAS HUNDIDO UN BARCO\n");
+            Sleep(2000);
             tablerocompuoculto[num1-1][num2-1]='X';
             tablerocompuvisible[num1-1][num2-1]='X';
             hundidosuser=hundidosuser+1;
+            marcardisparos(num1-1,num2-1,1);
             aux1=0;
         }
     else if(barco==3){
-            printf("TOCADO\n");
+            system("cls");
+            printf("ME HAS TOCADO UN BARCO\n");
+            Sleep(2000);
             tablerocompuoculto[num1-1][num2-1]='X';
             tablerocompuvisible[num1-1][num2-1]='X';
             aux1=0;
@@ -474,12 +497,15 @@ void juegauser(){
     else if(barco==4){
             tablerocompuoculto[num1-1][num2-1]='*';
             tablerocompuvisible[num1-1][num2-1]='*';
+            system("cls");
             printf("AGUA!! MAS SUERTE LA PROXIMA VEZ  \n");
+            Sleep(2000);
             aux1=0;
         }
     }while(aux1==1);
 }
-void imprimiruser(){
+
+void imprimiruser(){//IMPRIME TABLERO USUARIO
     int i,j;
     printf(" ");
     for(i=0;i<7;i++){
@@ -494,7 +520,8 @@ void imprimiruser(){
     printf("\n");
     }
 }
-void imprimircompu(){
+
+void imprimircompu(){//IMPRIME TABLERO ORDENADOR
     int i,j;
     printf(" ");
     for(i=0;i<7;i++){
@@ -510,7 +537,7 @@ void imprimircompu(){
     }
 }
 
-int comprobarBARCOS(int num1,int num2,int tablero){
+int comprobarBARCOS(int num1,int num2,int tablero){//COMPRUEBA SI AL DISPARAR HAY BARCOS EN ESA POSICION
    if(tablero==1){
         if(tablerocompuoculto[num1][num2]=='*'||tablerocompuoculto[num1][num2]=='X'){
             return 1;
@@ -542,7 +569,7 @@ int comprobarBARCOS(int num1,int num2,int tablero){
 
 }
 
-void inicializartableros(){
+void inicializartableros(){//INICIALIZA LOS TABLEROS DE USUARIO Y ORDENADOR
     int i,j;
     for(i=0;i<7;i++){
         for(j=0;j<7;j++){
@@ -552,7 +579,8 @@ void inicializartableros(){
         }
     }
 }
-int sorteaturno(){
+
+int sorteaturno(){//SORTEA EL TURNO AL PRINCIPIO DEL JUEGO
     int aleatorio;
     Sleep(1000);
     printf("SORTEANDO TURNO...\n");
@@ -562,18 +590,18 @@ int sorteaturno(){
     return aleatorio;
 }
 
-int comprobarsihundido(int num1,int num2,int tablero){
+int comprobarsihundido(int num1,int num2,int tablero){//COMPRUEBA SI AL DISPARAR A UN BARCO ES TOCADO O HUNDIDO
 //9 casos diferentes
 if(num1==0){
     if(num2==0){//1 esquina arriba izquierda
         if (tablero==1){
-            if(tablerocompuoculto[num1][num2+1]=='O'||tablerocompuoculto[num1+1][num2]=='O'|| tablerocompuoculto[num1+1][num2+1]=='O'){
+            if(tablerocompuoculto[num1][num2+1]=='O'||tablerocompuoculto[num1+1][num2]=='O'){
                 return 1;
             }
             else return 0;
         }
         else if (tablero==2){
-        if(tablerouser[num1][num2+1]=='O'||tablerouser[num1+1][num2]=='O'|| tablerouser[num1+1][num2+1]=='O'){
+        if(tablerouser[num1][num2+1]=='O'||tablerouser[num1+1][num2]=='O'){
                 return 1;
             }
             else return 0;
@@ -581,13 +609,13 @@ if(num1==0){
     }
     else if (num2==6){//2 esquina arriba derecha
         if (tablero==1){
-            if(tablerocompuoculto[num1][num2-1]=='O'||tablerocompuoculto[num1+1][num2]=='O'|| tablerocompuoculto[num1+1][num2-1]=='O'){
+            if(tablerocompuoculto[num1][num2-1]=='O'||tablerocompuoculto[num1+1][num2]=='O'){
                 return 1;
             }
             else return 0;
         }
         else if (tablero==2){
-        if(tablerouser[num1][num2-1]=='O'||tablerouser[num1+1][num2]=='O'|| tablerouser[num1+1][num2-1]=='O'){
+        if(tablerouser[num1][num2-1]=='O'||tablerouser[num1+1][num2]=='O'){
                 return 1;
             }
             else return 0;
@@ -595,13 +623,13 @@ if(num1==0){
     }
     else{//3 demas fila arriba
         if (tablero==1){
-            if(tablerocompuoculto[num1][num2+1]=='O'||tablerocompuoculto[num1+1][num2]=='O'|| tablerocompuoculto[num1+1][num2+1]=='O'|| tablerocompuoculto[num1][num2-1]=='O'|| tablerocompuoculto[num1+1][num2-1]=='O'){
+            if(tablerocompuoculto[num1][num2+1]=='O'||tablerocompuoculto[num1+1][num2]=='O'|| tablerocompuoculto[num1][num2-1]=='O'){
                 return 1;
             }
             else return 0;
         }
         else if (tablero==2){
-        if(tablerouser[num1][num2+1]=='O'||tablerouser[num1+1][num2]=='O'|| tablerouser[num1+1][num2+1]=='O'|| tablerouser[num1][num2-1]=='O'|| tablerouser[num1+1][num2-1]=='O'){
+        if(tablerouser[num1][num2+1]=='O'||tablerouser[num1+1][num2]=='O'|| tablerouser[num1][num2-1]=='O'){
                 return 1;
             }
            else return 0;
@@ -612,13 +640,13 @@ if(num1==0){
 else if(num1==6){
     if (num2==0){//4 esquina abajo izquierda
         if (tablero==1){
-            if(tablerocompuoculto[num1-1][num2]=='O'||tablerocompuoculto[num1-1][num2+1]=='O'|| tablerocompuoculto[num1][num2+1]=='O'){
+            if(tablerocompuoculto[num1-1][num2]=='O'|| tablerocompuoculto[num1][num2+1]=='O'){
                 return 1;
             }
             else return 0;
         }
         else if (tablero==2){
-        if(tablerouser[num1-1][num2]=='O'||tablerouser[num1-1][num2+1]=='O'|| tablerouser[num1][num2+1]=='O'){
+        if(tablerouser[num1-1][num2]=='O'|| tablerouser[num1][num2+1]=='O'){
                 return 1;
             }
             else return 0;
@@ -626,13 +654,13 @@ else if(num1==6){
     }
     else if (num2==6){//5 esquina abajo derecha
         if (tablero==1){
-            if(tablerocompuoculto[num1-1][num2]=='O'||tablerocompuoculto[num1][num2-1]=='O'|| tablerocompuoculto[num1-1][num2-1]=='O'){
+            if(tablerocompuoculto[num1-1][num2]=='O'||tablerocompuoculto[num1][num2-1]=='O'){
                 return 1;
             }
             else return 0;
         }
         else if (tablero==2){
-        if(tablerouser[num1-1][num2]=='O'||tablerouser[num1][num2-1]=='O'|| tablerouser[num1-1][num2-1]=='O'){
+        if(tablerouser[num1-1][num2]=='O'||tablerouser[num1][num2-1]=='O'){
                 return 1;
             }
             else return 0;
@@ -640,13 +668,13 @@ else if(num1==6){
     }
     else{//6 demas fila abajo
         if (tablero==1){
-            if(tablerocompuoculto[num1-1][num2]=='O'||tablerocompuoculto[num1-1][num2+1]=='O'|| tablerocompuoculto[num1][num2+1]=='O'|| tablerocompuoculto[num1][num2-1]=='O'|| tablerocompuoculto[num1-1][num2-1]=='O'){
+            if(tablerocompuoculto[num1-1][num2]=='O'|| tablerocompuoculto[num1][num2+1]=='O'|| tablerocompuoculto[num1][num2-1]=='O'){
                 return 1;
             }
             else return 0;
         }
         else if (tablero==2){
-        if(tablerouser[num1-1][num2]=='O'||tablerouser[num1-1][num2+1]=='O'|| tablerouser[num1][num2+1]=='O'|| tablerouser[num1][num2-1]=='O'|| tablerouser[num1-1][num2-1]=='O'){
+        if(tablerouser[num1-1][num2]=='O'|| tablerouser[num1][num2+1]=='O'|| tablerouser[num1][num2-1]=='O'){
                 return 1;
             }
            else return 0;
@@ -656,13 +684,13 @@ else if(num1==6){
 
 else if(num2==0 && num1!=0 && num1!=6){//7 demas columna izquierda
     if (tablero==1){
-            if(tablerocompuoculto[num1-1][num2]=='O'||tablerocompuoculto[num1-1][num2+1]=='O'|| tablerocompuoculto[num1][num2+1]=='O'|| tablerocompuoculto[num1+1][num2+1]=='O'|| tablerocompuoculto[num1+1][num2]=='O'){
+            if(tablerocompuoculto[num1-1][num2]=='O'|| tablerocompuoculto[num1][num2+1]=='O'|| tablerocompuoculto[num1+1][num2]=='O'){
                 return 1;
             }
             else return 0;
         }
         else if (tablero==2){
-        if(tablerouser[num1-1][num2]=='O'||tablerouser[num1-1][num2+1]=='O'|| tablerouser[num1][num2+1]=='O'|| tablerouser[num1+1][num2+1]=='O'|| tablerouser[num1+1][num2]=='O'){
+        if(tablerouser[num1-1][num2]=='O'|| tablerouser[num1][num2+1]=='O'|| tablerouser[num1+1][num2]=='O'){
                 return 1;
             }
            else return 0;
@@ -671,13 +699,13 @@ else if(num2==0 && num1!=0 && num1!=6){//7 demas columna izquierda
 
 else if(num2==6 && num1!=0 && num1!=6){//8 demas columna derecha
     if (tablero==1){
-            if(tablerocompuoculto[num1-1][num2]=='O'||tablerocompuoculto[num1-1][num2-1]=='O'|| tablerocompuoculto[num1][num2-1]=='O'|| tablerocompuoculto[num1+1][num2-1]=='O'|| tablerocompuoculto[num1+1][num2]=='O'){
+            if(tablerocompuoculto[num1-1][num2]=='O'|| tablerocompuoculto[num1][num2-1]=='O'|| tablerocompuoculto[num1+1][num2]=='O'){
                 return 1;
             }
             else return 0;
         }
         else if (tablero==2){
-        if(tablerouser[num1-1][num2]=='O'||tablerouser[num1-1][num2-1]=='O'|| tablerouser[num1][num2-1]=='O'|| tablerouser[num1+1][num2-1]=='O'|| tablerouser[num1+1][num2]=='O'){
+        if(tablerouser[num1-1][num2]=='O'|| tablerouser[num1][num2-1]=='O'|| tablerouser[num1+1][num2]=='O'){
                 return 1;
             }
            else return 0;
@@ -686,13 +714,13 @@ else if(num2==6 && num1!=0 && num1!=6){//8 demas columna derecha
 
 else{//9 todas las demas (centro)
     if (tablero==1){
-                if(tablerocompuoculto[num1-1][num2]=='O'||tablerocompuoculto[num1-1][num2+1]=='O'|| tablerocompuoculto[num1][num2+1]=='O'|| tablerocompuoculto[num1+1][num2+1]=='O'|| tablerocompuoculto[num1+1][num2]=='O'|| tablerocompuoculto[num1+1][num2-1]=='O'|| tablerocompuoculto[num1][num2-1]=='O'|| tablerocompuoculto[num1-1][num2-1]=='O'){
+                if(tablerocompuoculto[num1-1][num2]=='O'|| tablerocompuoculto[num1][num2+1]=='O'|| tablerocompuoculto[num1+1][num2]=='O'|| tablerocompuoculto[num1][num2-1]=='O'){
                     return 1;
                 }
                 else return 0;
             }
             else if (tablero==2){
-            if(tablerouser[num1-1][num2]=='O'||tablerouser[num1-1][num2+1]=='O'|| tablerouser[num1][num2+1]=='O'|| tablerouser[num1+1][num2+1]=='O'|| tablerouser[num1+1][num2]=='O'|| tablerouser[num1+1][num2-1]=='O'|| tablerouser[num1][num2-1]=='O'|| tablerouser[num1-1][num2-1]=='O'){
+            if(tablerouser[num1-1][num2]=='O'|| tablerouser[num1][num2+1]=='O'|| tablerouser[num1+1][num2]=='O'|| tablerouser[num1][num2-1]=='O'){
                     return 1;
                 }
                else return 0;
@@ -700,6 +728,184 @@ else{//9 todas las demas (centro)
 }
 
 return 0;
+}
 
+void guardapartida(){//GUARDA LOS TABLEROS Y LAS VARIABLES NECESARIAS EN UN FICHERO BINARIO
+
+FILE *fich;
+if ((fich = fopen("miniflota_g.dat", "wb")) == NULL){
+    printf ("Error en apertura del fichero para escritura\n");
+    }
+else {
+    system("cls");
+    printf ("Guardando partida...\n");
+    fwrite(&hundidoscompu, sizeof(int), 1, fich);
+    fwrite(&hundidosuser, sizeof(int), 1, fich);
+    fwrite(&tablerocompuoculto, sizeof(tablerocompuoculto), 1, fich);
+    fwrite(&tablerocompuvisible, sizeof(tablerocompuvisible), 1, fich);
+    fwrite(&tablerouser, sizeof(tablerouser), 1, fich);
+    Sleep(1000);
+    printf ("Partida guardada\n");
+    Sleep(1000);
+    system("cls");
+    printf ("Ahora el programa se cerrar\240.\n");
+    Sleep(1000);
+    exit(0);
+
+ }
+fclose (fich);
+}
+
+void marcardisparos(int num1,int num2, int tablero){//CUANDO SE HUNDE UN BARCO, MARCA COMO DISPARADAS LAS POSICIONES DIRECTAMENTE COLINDANTES
+    int auxnum1, auxnum2;
+    if(tablero==1){
+        auxnum1=num1;
+        auxnum2=num2+1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+                if (tablerocompuoculto[auxnum1][auxnum2]=='.'){
+                    tablerocompuoculto[auxnum1][auxnum2]='*';
+                    tablerocompuvisible[auxnum1][auxnum2]='*';
+                }
+                else if(tablerocompuoculto[auxnum1][auxnum2]=='X'){
+                    tablerocompuoculto[num1][num2]='T';
+                    marcardisparos(auxnum1,auxnum2,1);
+                    tablerocompuoculto[num1][num2]='X';
+                }
+        }
+        auxnum1=num1;
+        auxnum2=num2-1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+                if (tablerocompuoculto[auxnum1][auxnum2]=='.'){
+                    tablerocompuoculto[auxnum1][auxnum2]='*';
+                    tablerocompuvisible[auxnum1][auxnum2]='*';
+                }
+                else if(tablerocompuoculto[auxnum1][auxnum2]=='X'){
+                    tablerocompuoculto[num1][num2]='T';
+                    marcardisparos(auxnum1,auxnum2,1);
+                    tablerocompuoculto[num1][num2]='X';
+                }
+        }
+        auxnum1=num1+1;
+        auxnum2=num2;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+                if (tablerocompuoculto[auxnum1][auxnum2]=='.'){
+                    tablerocompuoculto[auxnum1][auxnum2]='*';
+                    tablerocompuvisible[auxnum1][auxnum2]='*';
+                }
+                else if(tablerocompuoculto[auxnum1][auxnum2]=='X'){
+                    tablerocompuoculto[num1][num2]='T';
+                    marcardisparos(auxnum1,auxnum2,1);
+                    tablerocompuoculto[num1][num2]='X';
+                }
+        }
+        auxnum1=num1-1;
+        auxnum2=num2;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+                if (tablerocompuoculto[auxnum1][auxnum2]=='.'){
+                    tablerocompuoculto[auxnum1][auxnum2]='*';
+                    tablerocompuvisible[auxnum1][auxnum2]='*';
+                }
+                else if(tablerocompuoculto[auxnum1][auxnum2]=='X'){
+                    tablerocompuoculto[num1][num2]='T';
+                    marcardisparos(auxnum1,auxnum2,1);
+                    tablerocompuoculto[num1][num2]='X';
+                }
+        }
+        auxnum1=num1+1;
+        auxnum2=num2+1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+            tablerocompuoculto[auxnum1][auxnum2]='*';
+            tablerocompuvisible[auxnum1][auxnum2]='*';
+        }
+        auxnum1=num1+1;
+        auxnum2=num2-1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+            tablerocompuoculto[auxnum1][auxnum2]='*';
+            tablerocompuvisible[auxnum1][auxnum2]='*';
+        }
+        auxnum1=num1-1;
+        auxnum2=num2-1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+            tablerocompuoculto[auxnum1][auxnum2]='*';
+            tablerocompuvisible[auxnum1][auxnum2]='*';
+        }
+        auxnum1=num1-1;
+        auxnum2=num2+1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+            tablerocompuoculto[auxnum1][auxnum2]='*';
+            tablerocompuvisible[auxnum1][auxnum2]='*';
+        }
+    }
+    else {
+        auxnum1=num1;
+        auxnum2=num2+1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+                if (tablerouser[auxnum1][auxnum2]=='.'){
+                    tablerouser[auxnum1][auxnum2]='*';
+                }
+                else if(tablerouser[auxnum1][auxnum2]=='X'){
+                    tablerouser[num1][num2]='T';
+                    marcardisparos(auxnum1,auxnum2,2);
+                    tablerouser[num1][num2]='X';
+                }
+        }
+        auxnum1=num1;
+        auxnum2=num2-1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+                if (tablerouser[auxnum1][auxnum2]=='.'){
+                    tablerouser[auxnum1][auxnum2]='*';
+                }
+                else if(tablerouser[auxnum1][auxnum2]=='X'){
+                    tablerouser[num1][num2]='T';
+                    marcardisparos(auxnum1,auxnum2,2);
+                    tablerouser[num1][num2]='X';
+                }
+        }
+        auxnum1=num1+1;
+        auxnum2=num2;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+                if (tablerouser[auxnum1][auxnum2]=='.'){
+                    tablerouser[auxnum1][auxnum2]='*';
+                }
+                else if(tablerouser[auxnum1][auxnum2]=='X'){
+                    tablerouser[num1][num2]='T';
+                    marcardisparos(auxnum1,auxnum2,2);
+                    tablerouser[num1][num2]='X';
+                }
+        }
+        auxnum1=num1-1;
+        auxnum2=num2;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+                if (tablerouser[auxnum1][auxnum2]=='.'){
+                    tablerouser[auxnum1][auxnum2]='*';
+                }
+                else if(tablerouser[auxnum1][auxnum2]=='X'){
+                    tablerouser[num1][num2]='T';
+                    marcardisparos(auxnum1,auxnum2,2);
+                    tablerouser[num1][num2]='X';
+                }
+        }
+        auxnum1=num1+1;
+        auxnum2=num2+1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+            tablerouser[auxnum1][auxnum2]='*';
+        }
+        auxnum1=num1+1;
+        auxnum2=num2-1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+            tablerouser[auxnum1][auxnum2]='*';
+        }
+        auxnum1=num1-1;
+        auxnum2=num2-1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+            tablerouser[auxnum1][auxnum2]='*';
+        }
+        auxnum1=num1-1;
+        auxnum2=num2+1;
+        if(auxnum1>=0 && auxnum1<7 && auxnum2>=0 && auxnum2<7){
+            tablerouser[auxnum1][auxnum2]='*';
+        }
+
+    }
 
 }

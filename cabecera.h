@@ -5,25 +5,32 @@
 #include <time.h>
 #include <string.h>
 #include <windows.h>
-
 #include <unistd.h>
+/*
+##Proyecto miniflota##
+Realizado por David Rubio Mateos (bk0084)
+main.c con el programa principal
+funciones.c con el desarrollo de todas las funciones utilizadas
+cabecera.h con la declaraci�n de variables globales y cabeceras de funciones
+*/
 
-char tablerouser [7][7];//INICIALIZA TABLERO USUARIO
-char tablerocompuvisible [7][7];//INICALIZA TABLERO CON LOS BARCOS DEL COMPU VISIBLE
-char tablerocompuoculto [7][7];//INICALIZA TABLERO CON LOS BARCOS DEL COMPU OCULTO
-int turno, hundidoscompu, hundidosuser, num1, num2;/*INICIALIZA LAS VARIABLES GLOBALES NECESARIAS (TURNO ACTUAL,
-NÚMERO DE BARCOS HUNDIDOS POR CADA USER)*/
 
-void colocacompu();//COLOCA LOS BARCOS DEL COMPU
-void colocauser();//COLOCA LOS BARCOS DEL USUARIO, SE PIDEN LAS POSICIONES AL USUARIO
-void juegauser();//JUEGA EL JUGADOR
-void juegacompu();//JUEGA COMPU
-void imprimiruser();//IMPRIME EL TABLERO DE USER
-void imprimircompu();//IMPRIME EL TABLERO CON LOS BARCOS OCULTOS DE COMPU
-void inicializartableros();//INICIALIZA LOS TABLEROS CON ASTERISCOS EN TODAS LAS POSICIONES
-int sorteaturno();//TNUMERO ALEATORIO PARA SORTEAR TURNO
+char tablerouser [7][7];
+char tablerocompuvisible [7][7];
+char tablerocompuoculto [7][7];
+int turno, hundidoscompu, hundidosuser, num1, num2;
+
+void colocacompu();
+void colocauser();
+void juegauser();
+void juegacompu();
+void imprimiruser();
+void imprimircompu();
+void inicializartableros();
+int sorteaturno();
 int comprobar(int num1, int num2, int tablero);
-int comprobarBARCOS(int num1, int num2, int tablero);//COMPRUEBA SI LOS DISPARON DAN A UN BARCO
-int comprobarsihundido(int num1,int num2,int tablero);//COMPRUEBA SI EL BARCO ESTÁ HUNDIDO
-
+int comprobarBARCOS(int num1, int num2, int tablero);
+int comprobarsihundido(int num1,int num2,int tablero);
+void guardapartida();
+void marcardisparos(int num1,int num2, int tablero);
 #endif
